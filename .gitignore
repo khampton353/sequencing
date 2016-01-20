@@ -1,3 +1,6 @@
+#various
+hist*
+help
 # Object files
 *.o
 *.ko
