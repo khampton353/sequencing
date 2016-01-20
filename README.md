@@ -8,6 +8,7 @@ The program only uses cards from one suit, reading in a pattern of 13 card face 
 The code was implemented and tested on Visual Studio at the request of the Instructor. It currently runs on both Linux and Windows, but has a bug displaying some error messages when run on Fedora in a Virtual Box
 
 #Todo
-- [ ] Determine scope of Linux display bug (test on a native Linux installation)
+- [ ] Determine scope of Linux display bug(s) (test on a native Linux installation)
+- [ ] Fix bug(s)
 - [ ] Clean line endings of ^M from Visual Studio
 
