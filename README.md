@@ -9,4 +9,5 @@ The code was implemented and tested on Visual Studio at the request of the Instr
 
 #Todo
 - [ ] Determine scope of Linux display bug (test on a native Linux installation)
-  
+- [ ] Clean line endings of ^M from Visual Studio
+
