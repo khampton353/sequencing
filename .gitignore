@@ -1,6 +1,6 @@
 #various
 hist*
-help
+help*
 sv*
 # Object files
 *.o
