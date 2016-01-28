@@ -1,0 +1,23 @@
+* 7b94ee5 (HEAD -> tweak) test changes
+* 9963d50 sdded to neg testing
+* d5d29d7 Updated README to reflect git training assignment
+*   01d3940 Merge branch 'master' into tweak
+|\  
+* | a3ee82d Fix .gitignore error
+| | * d743e5e (master) .c comments and *old to .gitignore
+| | * 89a6025 added new input pattern
+| |/  
+| * 841993b (origin/master, origin/HEAD) Fix .gitignore error
+|/  
+* 2e74b04 Extend .gitignore
+* a5a07c6 gitignore changes
+* c312150 Changed negative test input
+*   4323674 Trying to merge README.md after conflict
+|\  
+| * f5a09f2 Update README.md
+* | 698a3a2 Modified README with todo for fixing line endings
+|/  
+* 8dc3a0b Some cleanup to test input
+* 4620b93 Add source and test input
+* 07fc95e Initial modifications to explain the sequencing program
+* 3a1dc76 Initial commit
