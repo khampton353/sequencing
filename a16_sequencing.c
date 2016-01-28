@@ -196,7 +196,7 @@ static void doQ(int *valp, int q, int EnQ) {
 }
 
 
-/*generate and enqueue a shuffled deck. */
+/*generate and enqueue a shuffled deck by randomizing swaps at deck indices. */
 static void getShuffled(void){
 	int i,j,tmp;
 	int deck[DSZ];
