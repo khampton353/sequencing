@@ -1,4 +1,6 @@
 # sequencing
+This is an exercise to get experience with git.
+
 Code from a simple c class assignment using queues
 
 Program requirements included generation of an output file as well as console display, and demonstrating use of queue data structures and operations. 
