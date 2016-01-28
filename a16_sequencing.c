@@ -141,7 +141,7 @@ static int whatCard(char *buf) {
 }
 
 
-/*display the current contents of the queue*/
+/*display the current contents of the specified queue*/
 void showQueued(int head,int tail, int *q){
 	while (head - tail) {
 		doPrint("%-3s",FACE[q[head]]);

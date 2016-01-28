@@ -3,6 +3,7 @@ hist*
 .hist*
 help*
 sv*
+*old
 # Object files
 *.o
 *.ko
