@@ -1,5 +1,7 @@
 # sequencing
-This is an exercise to get experience with git.
+Initial exercise in using GIT.
+
+Exercise is built around introducing an advanced C course assignment and git infrastructure.
 
 Code from a simple c class assignment using queues
 
