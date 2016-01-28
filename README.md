@@ -1,4 +1,9 @@
 # sequencing
+Initial exercise in using GIT.
+
+Exercise is built around introducing an advanced C course assignment and git infrastructure.
+
+
 Code from a simple c class assignment using queues
 
 Program requirements included generation of an output file as well as console display, and demonstrating use of queue data structures and operations. 
