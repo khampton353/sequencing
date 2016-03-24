@@ -91,12 +91,13 @@ static int doPrint(char * str,...) {
 	va_start(ap,str);
 	i=vprintf(str,ap); //save i for return to mimic what printf returns
 	va_end(ap);
-	fflush(stdin);
+	fflush(stdout);
 #ifdef WRITEFILE
 	if (oFile) {
 		va_start(ap,str);
-		i=vfprintf(oFile,str,ap); //save i for return to mimic what printf returns
+		i=vfprintf(oFile,str,ap);
 		va_end(ap);
+		fflush(oFile);
 	}
 #endif
 	return i;
@@ -330,6 +331,7 @@ static int buildPattern(char *buf, int sz){
 int main(){
 	FILE *infile;
 	char buf[64];
+	int ln;
 
 	if (QSZ&(QSZ-1)){
 		doPrint("Programming error, queue size must be power of two\n");
@@ -345,17 +347,20 @@ int main(){
 #endif
 
 /* Read patterns from an input file and play the sequencing 'game' */
-	if (!(infile=fopen("a16input_neg.txt","r"))) {
-		doPrint("Unable to open input file, exiting\n");
+	if (!(infile=fopen("/home/khampton/oosc/sequencing/sequencing/a16input.txt","r"))) {
+		doPrint("Unable to open input file, exiting %d\n",errno);
 		doExit(2);
 	}
 
 	while (fgets(buf, sizeof(buf),infile)) {
                 doPrint("BUF:%s",buf);
-		if (buf[strlen(buf)-1] == '\n')
-		    buf[strlen(buf)-1] = ' '; 
+		ln=strlen(buf);
+		if (buf[ln-1] == '\n')
+		    ln--; 
+		if (buf[ln-1] == '\r') //handle files created on Windows
+		    ln--; 
 		srand((unsigned int)time(0));
-		if(buildPattern(buf, strlen(buf)+1))
+		if(buildPattern(buf, ln+1))
 			playGame(); //makes deck then 'plays'
 		doQ(0,-1,0);
 	}
