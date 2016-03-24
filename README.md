@@ -9,8 +9,9 @@ The C program requirements included generation of an output file as well as cons
 
 The code was implemented and tested on Visual Studio at the request of the Instructor. It currently runs on both Linux and Windows, but has a bug displaying some error messages when run on Fedora in a Virtual Box
 
+Update: Problem was caused by not properly managing the \r\n ending of pattern files created on Microsoft Windows.
 #Todo
-- [ ] Determine scope of Linux display bug(s) (test on a native Linux installation)
-- [ ] Fix bug(s)
+- [x] Determine scope of Linux display bug(s) (test on a native Linux installation)
+- [x] Fix bug(s)
 - [ ] Clean line endings of ^M from Visual Studio
 
