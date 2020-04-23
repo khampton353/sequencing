@@ -35,6 +35,8 @@
 #define OUTFILE "output16.txt"
 #endif
 
+#define CLSFILE "/home/khampton/oosc/sequencing/sequencing/a16input.txt"
+
 #define QSZ 16 //queue size, must be power of two
 #define DSZ 13 //deck size
 #define ENQ 1
@@ -328,8 +330,8 @@ static int buildPattern(char *buf, int sz){
 
 
 /* main() program body */
-int main(){
-	FILE *infile;
+int main(int argc, char* argv[]){
+	FILE *infile = NULL;
 	char buf[64];
 	int ln;
 
@@ -347,18 +349,28 @@ int main(){
 #endif
 
 /* Read patterns from an input file and play the sequencing 'game' */
-	if (!(infile=fopen("/home/khampton/oosc/sequencing/sequencing/a16input.txt","r"))) {
-		doPrint("Unable to open input file, exiting %d\n",errno);
+	if (argc > 1)
+		infile=fopen(argv[1], "r");
+	else
+		infile=fopen(CLSFILE, "r");
+
+
+	if (!infile) {
+		doPrint("Unable to open input file %s, exiting %d\n",
+			(argc > 1) ? argv[1] : CLSFILE, errno);
 		doExit(2);
 	}
 
 	while (fgets(buf, sizeof(buf),infile)) {
-                doPrint("BUF:%s",buf);
 		ln=strlen(buf);
+		if (ln < 3)
+			continue;
+                doPrint("BUF:%s",buf);
+
 		if (buf[ln-1] == '\n')
-		    ln--; 
+		    ln--;
 		if (buf[ln-1] == '\r') //handle files created on Windows
-		    ln--; 
+		    ln--;
 		srand((unsigned int)time(0));
 		if(buildPattern(buf, ln+1))
 			playGame(); //makes deck then 'plays'
